@@ -37,16 +37,16 @@ it('should diplay result of a positive and a negative number', () => {
   cy.get('.display').should('contain', '1')
   })
 
-xit('should display result of numbers that contain decimals', () => {
-  cy.get('#number0').click()
-  cy.get('#decimal').click()
-  cy.get('#number6').click()
-  cy.get('#operator_add').click()
+it('should display result of numbers that contain decimals', () => {
   cy.get('#number0').click()
   cy.get('#decimal').click()
   cy.get('#number5').click()
+  cy.get('#operator_add').click()
+  cy.get('#number0').click()
+  cy.get('#decimal').click()
+  cy.get('#number6').click()
   cy.get('#operator-equals').click()
-  cy.get('.dislplay').should('contain', '1.1')
+  cy.get('.display').should('contain', '1.1')
 
 })
 
@@ -67,7 +67,7 @@ it('should display result that equals a large number', () => {
 })
 
 //What does the code do in exceptional circumstances? Specifically, if you divide by zero, what is the effect? Write a test to describe what you'd prefer to happen, and then correct the code to make that test pass (you will need to modify the Calculator model to meet this requirement).
-xit('should display error if a number is divided by 0',() => {
+it('should display error if a number is divided by 0',() => {
   cy.get('#number7').click()
   cy.get('#operator-divide').click()
   cy.get('#number0').click()
