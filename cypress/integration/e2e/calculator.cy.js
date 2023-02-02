@@ -72,7 +72,7 @@ it('should display error if a number is divided by 0',() => {
   cy.get('#operator-divide').click()
   cy.get('#number0').click()
   cy.get('#operator-equals').click()
-  cy.get('display').should('contain', 'error')
+  cy.get('.display').should('contain', 'error')
 })
 
 })
