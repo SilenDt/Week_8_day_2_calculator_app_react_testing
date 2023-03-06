@@ -28,7 +28,7 @@ it('should display the result of multiple operations chained together', () => {
   cy.get('.display').should('contain', '31')
 })
 // Is the output as expected for a range of numbers (for example, positive, negative, decimals and very large numbers)?
-it('should diplay result of a positive and a negative number', () => {
+it('should diplay output of positive numbers', () => {
   cy.get('#operator-subtract').click()
   cy.get('#number5').click()
   cy.get('#operator_add').click()
@@ -75,4 +75,13 @@ it('should display error if a number is divided by 0',() => {
   cy.get('.display').should('contain', 'error')
 })
 
+//should display total of negative numbers
+it('should display the ouput of negative numbers', () => {
+  cy.get('#number3').click()
+  cy.get('#operator-subtract').click()
+  cy.get('#number4').click()
+  cy.get('#operator-equals').click()
+  cy.get('.display').should('contain', '-')
+  .and('contain', '1')
+})
 })

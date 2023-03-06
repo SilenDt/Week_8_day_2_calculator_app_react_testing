@@ -115,12 +115,20 @@ it('should clear the running total without affecting the calculation', () => {
   const button4 = container.getByTestId('number4')
   const button5 = container.getByTestId('number5')
   const clear = container.getByTestId('clear')
+  const button2 = container.getByTestId('number2')
+  const operatorAdd = container.getByTestId('operator-add')
+  const button3 = container.getByTestId('number3')
+  const operatorEquals = container.getByTestId('operator-equals')
   const runningTotal = container.getByTestId('running-total')
 
   fireEvent.click(button4)
   fireEvent.click(button5)
   fireEvent.click(clear)
-  expect(runningTotal.textContent).toEqual('0')
+  fireEvent.click(button2)
+  fireEvent.click(operatorAdd)
+  fireEvent.click(button3)
+  fireEvent.click(operatorEquals)
+  expect(runningTotal.textContent).toEqual('5')
 })
 
 
